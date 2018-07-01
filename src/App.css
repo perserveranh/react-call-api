@@ -1,0 +1,16 @@
+@import '~antd/dist/antd.css';
+.App {
+  /* text-align: center; */
+}
+.padding-top{
+  padding-top:70px;
+}
+.ant-layout-header {
+  text-align: center;
+  background:transparent;
+
+}
+button.ant-btn.ant-btn-primary.ant-btn-lg {
+  width: 150px;
+  text-align: left;
+}
