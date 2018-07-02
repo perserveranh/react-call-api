@@ -1,6 +1,7 @@
 import {Button,Divider} from 'antd';
 import React from 'react';
 
+
 const columns = [{
     title: 'STT',
     key:'stt',
@@ -21,8 +22,13 @@ const columns = [{
   },
   {
     title: 'Trạng Thái',
-    key:'status',
-    dataIndex: 'status',
+    dataIndex:true,
+    render: ()=>(
+      <span>
+      <Button type="danger">{!'status'? 'Còn hàng' : 'Hết hàng'}</Button>  
+      </span>
+    ),
+
   },
   {
     title: 'Hành Động',
@@ -31,11 +37,12 @@ const columns = [{
       <span>
       <Button type="danger">Sửa</Button>  
         <Divider type="vertical" />
-         <Button>Xóa</Button> 
+         <Button onClick={this.handDelete } >Xóa</Button> 
       </span>
     ),
   
   }
   
   ];
+
   export default columns;

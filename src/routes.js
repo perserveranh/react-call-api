@@ -1,22 +1,34 @@
 import React from 'react';
-import Home from './containers/Home/home';
-import NotFound from './containers/Notfound/notfound';
-import ProductLists from './containers/ProductList/productlist';
-
-const routes = [
-    {
-        path:'/',
+import Home from './components/Home/home';
+import ProductList from './components/productList/productList';
+import ProductAction from './components/ProductAction/productaction';
+import NotFound from './components/Notfound/notfound';
+const routes = [{
+        path: '/',
         exact: true,
-        main: () => <Home />
+
+        main: () => < Home / >
     },
     {
-        path:'',
-        main: () => <NotFound />
+        path: '/product-list',
+        exact: false,
+
+        main: () => < ProductList / >
     },
     {
-        path:'/product',
-        exact:true,
-        main:() => <ProductLists />
+        path: '/product/add',
+        exact: false,
+        main: ({history}) => < ProductAction history={history}/>
+    },
+    {
+        path:'/product/:id/edit',
+        exact:false,
+        main: ({match}) => <ProductAction match={match}/>
+    },
+    {
+        path: '',
+        exact: false,
+        main: () => < NotFound / >
     }
 
 ];
