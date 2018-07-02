@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Layout,Button } from 'antd';
+import { Layout } from 'antd';
 import ProductItems from './../productItems/productItems';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';

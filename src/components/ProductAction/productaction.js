@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Input, Button, Checkbox,Alert } from 'antd';
+import { Form, Input, Button, Checkbox } from 'antd';
 import callApi from '../../server/callApi';
 
 const FormItem = Form.Item;
@@ -24,17 +24,16 @@ const formTailLayout = {
       };
     }
   
-    check = () => {
-      this.props.form.validateFields(
-        (err) => {
-          if (!err) {
-            // console.info('success');
-            <Alert message="Success" type="success" />
+    // check = () => {
+    //   this.props.form.validateFields(
+    //     (err) => {
+    //       if (!err) {
+    //         <Alert message="Success" type="success" />
             
-          }
-        },
-      );
-    }
+    //       }
+    //     },
+    //   );
+    // }
   
     handleChange = (e) => {
       var target=e.target;
@@ -65,7 +64,7 @@ onCancel = () => {
 history.go(-2);
 }
         render() {
-          var {txtname,txtprice,ckbStatus} =this.state;
+          var {ckbStatus} =this.state;
           const { getFieldDecorator } = this.props.form;
             return (
       <div className="productaction">

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {Table,Button} from 'antd';
-import data  from './data';
+import {Table} from 'antd';
+// import data  from './data';
 import columns from './columns';
 import {connect} from 'react-redux';
 import CallApi from './../../server/callApi';
@@ -21,6 +21,7 @@ class ProductItems extends Component {
       });
     });
   }
+
   render() {
     // var {product} =this.props;
     
@@ -28,9 +29,10 @@ class ProductItems extends Component {
    
     return (
       <div className="productitems">
-      <Table 
+      <Table  
       style={{padding:'0 150px'}}
     columns={columns }
+    
     dataSource={product}
     bordered
     title={() => <span style={{color:'blue'}}> Danh Sách Sản Phẩm</span>}

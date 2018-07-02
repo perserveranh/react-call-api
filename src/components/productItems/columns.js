@@ -1,7 +1,7 @@
-import {Button,Divider} from 'antd';
+import {Button,Divider,Popconfirm} from 'antd';
 import React from 'react';
-
-
+import CallApi from './../../server/callApi';
+import data from './data'
 const columns = [{
     title: 'STT',
     key:'stt',
@@ -33,16 +33,23 @@ const columns = [{
   {
     title: 'Hành Động',
     key:'action',
-    render: ()=>(
+    render: (id)=>(
       <span>
       <Button type="danger">Sửa</Button>  
         <Divider type="vertical" />
-         <Button onClick={this.handDelete } >Xóa</Button> 
+        <Popconfirm title="Sure to delete?" onConfirm={() => hanleDelete(id.key) }>
+         <Button  >Xóa</Button> 
+         </Popconfirm>
       </span>
     ),
   
   }
   
   ];
-
+const hanleDelete = (id) =>{
+  CallApi(`products/${data.key}`,'DELETE',null).then(res => {
+    console.log(res);
+   
+  })
+}
   export default columns;
