@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Menu, Icon } from "antd";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Nav extends Component {
   state = {
@@ -14,7 +14,6 @@ class Nav extends Component {
   };
   render() {
     return (
-      
       <div className="menu">
         <Menu
           onClick={this.handleClick}
@@ -25,13 +24,11 @@ class Nav extends Component {
             <Icon type="home" />CALL API
           </Menu.Item>
           <Menu.Item>
-           
             <Link to="/">
-            Trang Chủ
+              Trang Chủ
             </Link>
           </Menu.Item>
           <Menu.Item key="alipay">
-          
             <Link to="/product-list">
               Quản Lý Sản Phẩm
             </Link>
